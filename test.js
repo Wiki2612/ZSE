@@ -5,19 +5,18 @@ const PDFDocument = require('pdfkit');
 const document = new PDFDocument({
   size: 'B5',
   margin: 30,
-  autor:"Adam"
+  autor:"Wiki"
 });
 
+document.font('ss/Lato-Regular.ttf') 
+  .fontSize(20)
+  .text('Wiki Polowczyk 4tp', { align: 'center' })
 
-document.font('media/Lato-Regular.ttf')
+document.font('ss/Lato-Regular.ttf')
   .fontSize(20)
   .text('Zespół Szkół Elektrycznych', { align: 'center' });
 
-document.font('media/Lato-Regular.ttf') 
-  .fontSize(20)
-  .text('4TP Adam Jamróz', { align: 'center' })
-
-const logoPath = 'media/zse-logo.png'; 
+const logoPath = 'ss/zse-logo.png'; 
 document.image(logoPath, {
   width: document.page.width * 0.3,
   align: 'left',
@@ -38,4 +37,4 @@ const outputPath = 'Moj_pdf.pdf';
 document.pipe(fs.createWriteStream(outputPath));
 document.end();
 
-console.log(`Dokument PDF został wygenerowany i zapisany w: ${outputPath}`);
+console.log(`PDF został wygenerowany i zapisany w: ${outputPath}`);
