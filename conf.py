@@ -4,7 +4,7 @@
 
 project = 'Docs'
 copyright = '2023'
-author = 'Adas'
+author = 'Wiki'
 
 release = '0.1'
 version = '0.1.0'
